@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      {n === 12 && <span>n은 12</span> && <span>n</span>}
+      <h1>다시 하려구요.</h1>
     </div>
   );
 }
