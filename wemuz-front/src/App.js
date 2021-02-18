@@ -1,9 +1,11 @@
 import './App.css';
 
 function App() {
+  const n = 11;
+
   return (
     <div className="App">
-      <h1>위뮤즈 입니다.</h1>
+      {n === 12 && <span>n은 12</span> && <span>n</span>}
     </div>
   );
 }
