@@ -1,0 +1,4 @@
+/* 기본 위뮤즈 style */
+@import './reset.css';
+@import './variable.css';
+@import './style.css';

@@ -1,0 +1,193 @@
+/***********************
+날짜: 20/01/03
+작성자: 유승민
+설명: 위뮤즈 footer
+***********************/
+
+/* Start footer Desktop size */
+.br--mobile {
+  display: none;
+}
+
+.footer {
+  background-color: var(--wemuz-dark-purple);
+}
+
+.footer.--white {
+  background-color: #ffffff;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  padding: 68px 0 52px;
+  margin: 0 auto;
+}
+
+/* Start footer > footer left */
+.footer__logo {
+  display: inline-block;
+  width: 122px;
+  height: 24px;
+  background: url('../assets/img/wemuz_logo_white.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 50%;
+}
+
+.--white .footer__logo {
+  background: url('../assets/img/wemuz_logo_footer.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 1;
+}
+
+/* Start footer > footer left > footer policy */
+.footer__policy {
+  font-size: 13px;
+  margin-top: 28px;
+}
+
+.footer__policy a,
+.footer__policy a:visited {
+  color: #dddddd;
+}
+
+.--white .footer__policy a,
+.--white .footer__policy a:visited {
+  color: var(--wemuz-black);
+}
+
+.footer__policy li:not(:first-child) {
+  margin-top: 10px;
+}
+/* End footer > footer left > footer policy */
+/* End footer > footer left */
+
+/* Start footer > footer right */
+.footer__social-link {
+  text-align: right;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  opacity: 0.6;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.social-link:hover {
+  opacity: 1;
+}
+
+.social--facebook {
+  background: url('../assets/img/icon_link-facebook.png') no-repeat center center;
+  background-size: contain;
+}
+
+.social--instagram {
+  background: url('../assets/img/icon_link-instagram.png') no-repeat center center;
+  background-size: contain;
+}
+
+.social--youtube {
+  background: url('../assets/img/icon_link-youtube.png') no-repeat center center;
+  background-size: contain;
+}
+
+.footer__address {
+  text-align: end;
+  color: var(--wemuz-gray);
+  font-size: 12px;
+  letter-spacing: 0.24px;
+  line-height: 18px;
+  margin-top: 64px;
+}
+
+.footer__address h5 {
+  color: #aaaaaa;
+  font-size: 14px;
+  letter-spacing: 0.56px;
+  margin-bottom: 4px;
+}
+.--white .footer__address h5 {
+  color: var(--wemuz-deep-gray);
+}
+/* End footer > footer right */
+/* End footer Desktop size */
+
+/* Start footer mobile size */
+@media screen and (max-width: 768px) {
+  .line--desktop {
+    display: none;
+  }
+
+  .br--mobile {
+    display: block;
+  }
+
+  .footer__container {
+    display: block;
+    width: 100%;
+    padding: 0 28px;
+  }
+
+  /* Start footer > left */
+  .footer__left {
+    padding: 44px 0 0;
+  }
+
+  .footer__logo {
+    width: 106px;
+    height: 21px;
+  }
+
+  .footer__policy {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .footer__policy li:not(:first-child) {
+    margin-top: 12px;
+  }
+  /* End footer > left */
+
+  /* Start footer > right */
+  .footer__right {
+    padding: 32px 0 94px;
+  }
+
+  .footer__social-link {
+    text-align: center;
+    padding-bottom: 44px;
+    border-bottom: 1px solid #ffffff33;
+  }
+
+  .--white .footer__social-link {
+    border-bottom: 1px solid var(--wemuz-white-gray);
+  }
+
+  .social-link:first-child {
+    margin-left: 0;
+  }
+
+  .footer__address {
+    text-align: start;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    padding-top: 26px;
+    margin-top: 0;
+  }
+
+  .footer__address h5 {
+    font-size: 11px;
+    letter-spacing: 0.44px;
+    margin-bottom: 8px;
+  }
+  /* End footer > right */
+}
+/* End footer mobile size */

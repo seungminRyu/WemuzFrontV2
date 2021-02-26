@@ -1,0 +1,284 @@
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: 0.4s;
+}
+
+/* 스크롤 내릴시 색깔 변경 */
+.--nav-alt {
+  background-color: white;
+  color: var(--wemuz-black);
+  box-sizing: border-box;
+  border-bottom: 1px solid #cccccc65;
+  box-shadow: none;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+  padding: 1.313em 0;
+}
+
+.nav__logo {
+  display: none;
+  height: 1.125rem;
+  transition: 0.5s;
+}
+
+.nav__logo {
+  display: none;
+}
+
+.--nav-alt .nav__logo {
+  display: block;
+}
+
+.nav__logo--white {
+  display: block;
+  height: 1.125rem;
+}
+
+.--nav-alt .nav__logo--white {
+  display: none;
+}
+
+.nav__menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.nav-right__menu {
+  display: flex;
+}
+
+.nav-right__menu > li {
+  position: relative;
+  margin-left: 2em;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-right__menu > li:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: -10px;
+  background: var(--wemuz-light-purple);
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.--nav-alt .nav-right__menu > li:before {
+  background-color: var(--wemuz-purple);
+}
+
+.nav-right__menu > li:hover:before,
+.nav-right__menu > li:focus:before,
+.nav-right__menu > li:active:before {
+  left: -2px;
+  right: -2px;
+}
+
+.nav__link {
+  -webkit-transition-property: color;
+  transition-duration: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.nav__link,
+.nav__link:visited {
+  color: #fff;
+}
+
+.--nav-alt .nav__link,
+.--nav-alt .nav__link:visited {
+  color: var(--wemuz-black);
+}
+
+.nav__link:hover,
+.nav__link:visited:hover {
+  color: var(--wemuz-light-purple);
+}
+
+.--nav-alt .nav__link:hover,
+.--nav-alt .nav__link:visited:hover {
+  color: var(--wemuz-purple);
+}
+
+/* 모바일 사이즈 nav-bar */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .nav-left {
+    width: 100%;
+    padding: 20px 28px;
+  }
+
+  .menu-active .nav-left {
+    border-bottom: 1px solid #ffffff3f;
+  }
+
+  .--nav-alt .menu-active .nav-left {
+    border-bottom: 1px solid #cccccc65;
+  }
+
+  .nav-left img {
+    width: 100px;
+  }
+
+  .nav-right {
+    display: block;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  .menu-active .nav-right {
+    display: block;
+    opacity: 100%;
+    height: 162px;
+    padding: 8px 28px;
+  }
+
+  .nav-right__menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-active .nav-right__menu {
+    opacity: 100%;
+    visibility: visible;
+  }
+
+  .nav-right__menu li {
+    opacity: 0;
+    margin-left: 0;
+    padding: 16px 12px;
+    border-bottom: 1px solid #ffffff3f;
+  }
+
+  .nav-right__menu > li:before {
+    display: none;
+  }
+
+  .--nav-alt .nav-right__menu li {
+    border-bottom: 1px solid #cccccc65;
+  }
+
+  .nav-right__menu li:last-child {
+    border-bottom: none;
+  }
+
+  .menu-active .nav-right__menu > li {
+    opacity: 100%;
+  }
+
+  .nav-right__menu li:nth-child(1) {
+    transition: all 0.2s 0.1s;
+  }
+  .nav-right__menu li:nth-child(2) {
+    transition: all 0.2s 0.2s;
+  }
+  .nav-right__menu li:nth-child(3) {
+    transition: all 0.2s 0.3s;
+  }
+
+  /* Navbar menu button Start */
+  .nav__menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-trigger,
+  .menu-trigger span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+  }
+
+  .menu-trigger {
+    position: relative;
+    width: 20px;
+    height: 24px;
+  }
+
+  .menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+
+  .--nav-alt .menu-trigger > span {
+    background-color: var(--wemuz-purple);
+  }
+
+  .menu-trigger span:nth-of-type(1) {
+    top: 4px;
+  }
+
+  .menu-trigger span:nth-of-type(2) {
+    top: 11px;
+  }
+
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 4px;
+  }
+
+  /* type-01 */
+  /* 중앙 라인이 고정된 자리에서 투명하게 사라지며 상하라인 회전하며 엑스자 만들기 */
+  .menu-active .menu-trigger > span:nth-of-type(1) {
+    -webkit-transform: translateY(7px) rotate (-45deg);
+    transform: translateY(7px) rotate(-45deg);
+  }
+
+  .menu-active .menu-trigger > span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .menu-active .menu-trigger > span:nth-of-type(3) {
+    -webkit-transform: translateY(-7px) rotate(45deg);
+    transform: translateY(-7px) rotate(45deg);
+  }
+  /* Navbar menu button End */
+}
